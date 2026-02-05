@@ -56,21 +56,21 @@ python -m dynamo.frontend &
 echo "Starting processor..."
 python -m dynamo.vllm --multimodal-processor --enable-multimodal --model $MODEL_NAME &
 
-EXTRA_ARGS=""
+EXTRA_ARGS="--max-model-len 8192 --dtype float16 --enforce-eager --block-size 64"
 
 # Start encode worker
 echo "Starting encode worker on GPU 0..."
-VLLM_NIXL_SIDE_CHANNEL_PORT=20097 CUDA_VISIBLE_DEVICES=0 python -m dynamo.vllm --multimodal-encode-worker --enable-multimodal --model $MODEL_NAME  $EXTRA_ARGS --kv-events-config '{"publisher":"zmq","topic":"kv-events","endpoint":"tcp://*:20080"}' &
+VLLM_NIXL_SIDE_CHANNEL_PORT=20097 ZE_AFFINITY_MASK=0,1 VLLM_ENCODER=1 python -m dynamo.vllm --multimodal-encode-worker --enable-multimodal --model $MODEL_NAME  $EXTRA_ARGS --kv-events-config '{"publisher":"zmq","topic":"kv-events","endpoint":"tcp://*:20080"}' &
 
 # Start prefill worker
 echo "Starting prefill worker on GPU 1..."
 VLLM_NIXL_SIDE_CHANNEL_PORT=20098 \
-CUDA_VISIBLE_DEVICES=1 python -m dynamo.vllm --multimodal-worker --is-prefill-worker --enable-multimodal --enable-mm-embeds --model $MODEL_NAME $EXTRA_ARGS --kv-events-config '{"publisher":"zmq","topic":"kv-events","endpoint":"tcp://*:20081"}' &
+ZE_AFFINITY_MASK=2,3 python -m dynamo.vllm --multimodal-worker --is-prefill-worker --enable-multimodal --enable-mm-embeds --model $MODEL_NAME $EXTRA_ARGS --kv-events-config '{"publisher":"zmq","topic":"kv-events","endpoint":"tcp://*:20081"}' &
 
 # Start decode worker
 echo "Starting decode worker on GPU 2..."
 VLLM_NIXL_SIDE_CHANNEL_PORT=20099 \
-CUDA_VISIBLE_DEVICES=2 python -m dynamo.vllm --multimodal-decode-worker --enable-multimodal --enable-mm-embeds --model $MODEL_NAME $EXTRA_ARGS --kv-events-config '{"publisher":"zmq","topic":"kv-events","endpoint":"tcp://*:20082"}' &
+ZE_AFFINITY_MASK=4,5 python -m dynamo.vllm --multimodal-decode-worker --enable-multimodal --enable-mm-embeds --model $MODEL_NAME $EXTRA_ARGS --kv-events-config '{"publisher":"zmq","topic":"kv-events","endpoint":"tcp://*:20082"}' &
 
 echo "=================================================="
 echo "All components started. Waiting for initialization..."

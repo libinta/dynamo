@@ -1,0 +1,356 @@
+==================================================
+Disaggregated Multimodal Serving
+==================================================
+Model: /software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/
+==================================================
+Starting frontend...
+Starting processor...
+Starting encode worker on GPU 0...
+Starting prefill worker on GPU 1...
+Starting decode worker on GPU 2...
+==================================================
+All components started. Waiting for initialization...
+==================================================
+[W205 07:16:31.109664252 OperatorEntry.cpp:218] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::geometric_(Tensor(a!) self, float p, *, Generator? generator=None) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: XPU
+  previous kernel: registered at /pytorch/aten/src/ATen/VmapModeRegistrations.cpp:37
+       new kernel: registered at /root/workspace/frameworks.ai.pytorch.ipex-gpu/build/Release/csrc/gpu/csrc/gpu/xpu/ATen/RegisterXPU_0.cpp:172 (function operator())
+[W205 07:16:31.109664051 OperatorEntry.cpp:218] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::geometric_(Tensor(a!) self, float p, *, Generator? generator=None) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: XPU
+  previous kernel: registered at /pytorch/aten/src/ATen/VmapModeRegistrations.cpp:37
+       new kernel: registered at /root/workspace/frameworks.ai.pytorch.ipex-gpu/build/Release/csrc/gpu/csrc/gpu/xpu/ATen/RegisterXPU_0.cpp:172 (function operator())
+[2m2026-02-05T07:16:31.778802Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Initializing KV store discovery backend
+[2m2026-02-05T07:16:31.778919Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::manager[0m[2m:[0m Initializing NetworkManager with NATS request plane [3mmode[0m[2m=[0mnats
+[2m2026-02-05T07:16:31.782915Z[0m [32m INFO[0m [2mdynamo_llm::http::service::service_v2[0m[2m:[0m Starting HTTP(S) service [3mprotocol[0m[2m=[0m"HTTP" [3maddress[0m[2m=[0m"0.0.0.0:8001"
+[W205 07:16:31.134167230 OperatorEntry.cpp:218] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::geometric_(Tensor(a!) self, float p, *, Generator? generator=None) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: XPU
+  previous kernel: registered at /pytorch/aten/src/ATen/VmapModeRegistrations.cpp:37
+       new kernel: registered at /root/workspace/frameworks.ai.pytorch.ipex-gpu/build/Release/csrc/gpu/csrc/gpu/xpu/ATen/RegisterXPU_0.cpp:172 (function operator())
+[2m2026-02-05T07:16:31.795655Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Added NATS service dynamo_processor
+[2m2026-02-05T07:16:31.795749Z[0m [32m INFO[0m [2mdynamo_llm::http::service::service_v2[0m[2m:[0m chat endpoints enabled
+[W205 07:16:31.285272602 OperatorEntry.cpp:218] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::geometric_(Tensor(a!) self, float p, *, Generator? generator=None) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: XPU
+  previous kernel: registered at /pytorch/aten/src/ATen/VmapModeRegistrations.cpp:37
+       new kernel: registered at /root/workspace/frameworks.ai.pytorch.ipex-gpu/build/Release/csrc/gpu/csrc/gpu/xpu/ATen/RegisterXPU_0.cpp:172 (function operator())
+[2m2026-02-05T07:16:32.028881Z[0m [32m INFO[0m [2mdynamo_llm::discovery::watcher[0m[2m:[0m Chat completions is ready
+[2m2026-02-05T07:16:32.047263Z[0m [32m INFO[0m [2mdynamo_llm::discovery::watcher[0m[2m:[0m added model [3mmodel_name[0m[2m=[0m"/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/" [3mnamespace[0m[2m=[0m"dynamo"
+2026-02-05 07:16:35,283 - dynamo.nixl_connect - WARNING - dynamo.nixl_connect: Failed to load CuPy for GPU acceleration, utilizing numpy to provide CPU based operations.
+2026-02-05 07:16:35,292 - dynamo.nixl_connect - WARNING - dynamo.nixl_connect: Failed to load CuPy for GPU acceleration, utilizing numpy to provide CPU based operations.
+2026-02-05 07:16:35,347 - dynamo.vllm.multimodal_handlers.encode_worker_handler - WARNING - Failed to import cupy, falling back to numpy: No module named 'cupy'.
+2026-02-05 07:16:35,349 - dynamo.nixl_connect - WARNING - dynamo.nixl_connect: Failed to load CuPy for GPU acceleration, utilizing numpy to provide CPU based operations.
+2026-02-05 07:16:35,354 - dynamo.vllm.multimodal_handlers.encode_worker_handler - WARNING - Failed to import cupy, falling back to numpy: No module named 'cupy'.
+[2m2026-02-05T07:16:35.371980Z[0m [32m INFO[0m [2margs.parse_args[0m[2m:[0m Setting --distributed-executor-backend=mp for TP=1 to avoid UniProcExecutor GIL contention with NIXL connector
+[2m2026-02-05T07:16:35.372523Z[0m [32m INFO[0m [2margs.create_kv_transfer_config[0m[2m:[0m Creating kv_transfer_config from --connector ['nixl']
+[2m2026-02-05T07:16:35.372600Z[0m [33m WARN[0m [2m_logger.warning[0m[2m:[0m User provided --kv_events_config which set enable_kv_cache_events to False (default). To publish events, explicitly set enable_kv_cache_events to True.
+[2m2026-02-05T07:16:35.372628Z[0m [32m INFO[0m [2margs.create_kv_events_config[0m[2m:[0m Using user-provided kv_events_config KVEventsConfig(enable_kv_cache_events=False, publisher='zmq', endpoint='tcp://*:20080', replay_endpoint=None, buffer_steps=10000, hwm=100000, max_queue_size=100000, topic='kv-events')
+[2m2026-02-05T07:16:35.372656Z[0m [32m INFO[0m [2margs.overwrite_args[0m[2m:[0m Using kv_events_config for publishing vLLM kv events over zmq: KVEventsConfig(enable_kv_cache_events=False, publisher='zmq', endpoint='tcp://*:20080', replay_endpoint=None, buffer_steps=10000, hwm=100000, max_queue_size=100000, topic='kv-events') (use_kv_events=False)
+[2m2026-02-05T07:16:35.378453Z[0m [32m INFO[0m [2margs.parse_args[0m[2m:[0m Setting --distributed-executor-backend=mp for TP=1 to avoid UniProcExecutor GIL contention with NIXL connector
+[2m2026-02-05T07:16:35.378972Z[0m [32m INFO[0m [2margs.create_kv_transfer_config[0m[2m:[0m Creating kv_transfer_config from --connector ['nixl']
+[2m2026-02-05T07:16:35.379048Z[0m [33m WARN[0m [2m_logger.warning[0m[2m:[0m User provided --kv_events_config which set enable_kv_cache_events to False (default). To publish events, explicitly set enable_kv_cache_events to True.
+[2m2026-02-05T07:16:35.379074Z[0m [32m INFO[0m [2margs.create_kv_events_config[0m[2m:[0m Using user-provided kv_events_config KVEventsConfig(enable_kv_cache_events=False, publisher='zmq', endpoint='tcp://*:20082', replay_endpoint=None, buffer_steps=10000, hwm=100000, max_queue_size=100000, topic='kv-events')
+[2m2026-02-05T07:16:35.379094Z[0m [32m INFO[0m [2margs.overwrite_args[0m[2m:[0m Using kv_events_config for publishing vLLM kv events over zmq: KVEventsConfig(enable_kv_cache_events=False, publisher='zmq', endpoint='tcp://*:20082', replay_endpoint=None, buffer_steps=10000, hwm=100000, max_queue_size=100000, topic='kv-events') (use_kv_events=False)
+[2m2026-02-05T07:16:35.379267Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Initializing KV store discovery backend
+[2m2026-02-05T07:16:35.379364Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::manager[0m[2m:[0m Initializing NetworkManager with NATS request plane [3mmode[0m[2m=[0mnats
+[2m2026-02-05T07:16:35.385403Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Initializing KV store discovery backend
+[2m2026-02-05T07:16:35.385488Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::manager[0m[2m:[0m Initializing NetworkManager with NATS request plane [3mmode[0m[2m=[0mnats
+2026-02-05 07:16:35,413 - dynamo.vllm.multimodal_handlers.encode_worker_handler - WARNING - Failed to import cupy, falling back to numpy: No module named 'cupy'.
+[2m2026-02-05T07:16:35.437235Z[0m [32m INFO[0m [2margs.parse_args[0m[2m:[0m Setting --distributed-executor-backend=mp for TP=1 to avoid UniProcExecutor GIL contention with NIXL connector
+[2m2026-02-05T07:16:35.437745Z[0m [32m INFO[0m [2margs.create_kv_transfer_config[0m[2m:[0m Creating kv_transfer_config from --connector ['nixl']
+[2m2026-02-05T07:16:35.437825Z[0m [33m WARN[0m [2m_logger.warning[0m[2m:[0m User provided --kv_events_config which set enable_kv_cache_events to False (default). To publish events, explicitly set enable_kv_cache_events to True.
+[2m2026-02-05T07:16:35.437850Z[0m [32m INFO[0m [2margs.create_kv_events_config[0m[2m:[0m Using user-provided kv_events_config KVEventsConfig(enable_kv_cache_events=False, publisher='zmq', endpoint='tcp://*:20081', replay_endpoint=None, buffer_steps=10000, hwm=100000, max_queue_size=100000, topic='kv-events')
+[2m2026-02-05T07:16:35.437872Z[0m [32m INFO[0m [2margs.overwrite_args[0m[2m:[0m Using kv_events_config for publishing vLLM kv events over zmq: KVEventsConfig(enable_kv_cache_events=False, publisher='zmq', endpoint='tcp://*:20081', replay_endpoint=None, buffer_steps=10000, hwm=100000, max_queue_size=100000, topic='kv-events') (use_kv_events=False)
+[2m2026-02-05T07:16:35.444280Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Initializing KV store discovery backend
+[2m2026-02-05T07:16:35.444365Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::manager[0m[2m:[0m Initializing NetworkManager with NATS request plane [3mmode[0m[2m=[0mnats
+2026-02-05 07:16:35,502 - dynamo.nixl_connect - WARNING - dynamo.nixl_connect: Failed to load CuPy for GPU acceleration, utilizing numpy to provide CPU based operations.
+[2m2026-02-05T07:16:35.528696Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Added NATS service dynamo_encoder
+[2m2026-02-05T07:16:35.528765Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Added NATS service dynamo_backend
+[2m2026-02-05T07:16:35.531351Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Added NATS service dynamo_decoder
+WARNING 02-05 07:16:35 [_logger.py:68] Found PROMETHEUS_MULTIPROC_DIR was set by user. This directory must be wiped between vLLM runs or you will find inaccurate metrics. Unset the variable and vLLM will properly handle cleanup.
+INFO 02-05 07:16:35 [model.py:530] Resolved architecture: Qwen3VLForConditionalGeneration
+WARNING 02-05 07:16:35 [_logger.py:68] Casting torch.bfloat16 to torch.float16.
+INFO 02-05 07:16:35 [model.py:1545] Using max model len 8192
+WARNING 02-05 07:16:35 [logger.py:147] Default sampling parameters have been overridden by the model's Hugging Face generation config recommended from the model creator. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+INFO 02-05 07:16:35 [model.py:530] Resolved architecture: Qwen3VLForConditionalGeneration
+WARNING 02-05 07:16:35 [_logger.py:68] Casting torch.bfloat16 to torch.float16.
+INFO 02-05 07:16:35 [model.py:1545] Using max model len 8192
+2026-02-05 07:16:35,566 - dynamo.vllm.multimodal_handlers.encode_worker_handler - WARNING - Failed to import cupy, falling back to numpy: No module named 'cupy'.
+[2m2026-02-05T07:16:35.589914Z[0m [32m INFO[0m [2margs.parse_args[0m[2m:[0m Setting --distributed-executor-backend=mp for TP=1 to avoid UniProcExecutor GIL contention with NIXL connector
+[2m2026-02-05T07:16:35.590452Z[0m [32m INFO[0m [2margs.create_kv_transfer_config[0m[2m:[0m Creating kv_transfer_config from --connector ['nixl']
+[2m2026-02-05T07:16:35.590527Z[0m [32m INFO[0m [2margs.create_kv_events_config[0m[2m:[0m Using env-var DYN_VLLM_KV_EVENT_PORT=20080 to create kv_events_config
+[2m2026-02-05T07:16:35.590566Z[0m [32m INFO[0m [2margs.overwrite_args[0m[2m:[0m Using kv_events_config for publishing vLLM kv events over zmq: KVEventsConfig(enable_kv_cache_events=True, publisher='zmq', endpoint='tcp://*:20080', replay_endpoint=None, buffer_steps=10000, hwm=100000, max_queue_size=100000, topic='') (use_kv_events=True)
+[2m2026-02-05T07:16:35.590941Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Added NATS service dynamo_backend
+WARNING 02-05 07:16:35 [_logger.py:68] Found PROMETHEUS_MULTIPROC_DIR was set by user. This directory must be wiped between vLLM runs or you will find inaccurate metrics. Unset the variable and vLLM will properly handle cleanup.
+[2m2026-02-05T07:16:35.597133Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Initializing KV store discovery backend
+[2m2026-02-05T07:16:35.597240Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::manager[0m[2m:[0m Initializing NetworkManager with NATS request plane [3mmode[0m[2m=[0mnats
+INFO 02-05 07:16:35 [model.py:530] Resolved architecture: Qwen3VLForConditionalGeneration
+WARNING 02-05 07:16:35 [_logger.py:68] Casting torch.bfloat16 to torch.float16.
+INFO 02-05 07:16:35 [model.py:1545] Using max model len 8192
+WARNING 02-05 07:16:35 [logger.py:147] Default sampling parameters have been overridden by the model's Hugging Face generation config recommended from the model creator. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+INFO 02-05 07:16:35 [model.py:530] Resolved architecture: Qwen3VLForConditionalGeneration
+WARNING 02-05 07:16:35 [_logger.py:68] Casting torch.bfloat16 to torch.float16.
+INFO 02-05 07:16:35 [model.py:1545] Using max model len 8192
+INFO 02-05 07:16:35 [scheduler.py:229] Chunked prefill is enabled with max_num_batched_tokens=2048.
+INFO 02-05 07:16:35 [vllm.py:630] Asynchronous scheduling is enabled.
+INFO 02-05 07:16:35 [vllm.py:637] Disabling NCCL for DP synchronization when using async scheduling.
+WARNING 02-05 07:16:35 [_logger.py:68] Enforce eager set, overriding optimization level to -O0
+WARNING 02-05 07:16:35 [_logger.py:68] KV cache events are disabled, but the scheduler is configured to publish them. Modify KVEventsConfig.enable_kv_cache_events to True to enable.
+WARNING 02-05 07:16:35 [_logger.py:68] Turning off hybrid kv cache manager because `--kv-transfer-config` is set. This will reduce the performance of vLLM on LLMs with sliding window attention or Mamba attention. If you are a developer of kv connector, please consider supporting hybrid kv cache manager for your connector by making sure your connector is a subclass of `SupportsHMA` defined in kv_connector/v1/base.py and use --no-disable-hybrid-kv-cache-manager to start vLLM.
+INFO 02-05 07:16:35 [utils.py:263] non-default args: {'convert': 'mm_encoder_only', 'max_model_len': 10, 'enable_prefix_caching': False, 'gpu_memory_utilization': 0.4, 'disable_log_stats': True, 'enforce_eager': True, 'model': '/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/'}
+WARNING 02-05 07:16:35 [_logger.py:68] The global random seed is set to 0. Since VLLM_ENABLE_V1_MULTIPROCESSING is set to False, this may affect the random state of the Python process that launched vLLM.
+INFO 02-05 07:16:35 [model.py:530] Resolved architecture: Qwen3VLForConditionalGeneration
+INFO 02-05 07:16:35 [model.py:1545] Using max model len 10
+INFO 02-05 07:16:35 [scheduler.py:229] Chunked prefill is enabled with max_num_batched_tokens=2048.
+INFO 02-05 07:16:35 [vllm.py:630] Asynchronous scheduling is enabled.
+INFO 02-05 07:16:35 [vllm.py:637] Disabling NCCL for DP synchronization when using async scheduling.
+WARNING 02-05 07:16:35 [_logger.py:68] Enforce eager set, overriding optimization level to -O0
+WARNING 02-05 07:16:35 [_logger.py:68] KV cache events are disabled, but the scheduler is configured to publish them. Modify KVEventsConfig.enable_kv_cache_events to True to enable.
+WARNING 02-05 07:16:35 [_logger.py:68] Turning off hybrid kv cache manager because `--kv-transfer-config` is set. This will reduce the performance of vLLM on LLMs with sliding window attention or Mamba attention. If you are a developer of kv connector, please consider supporting hybrid kv cache manager for your connector by making sure your connector is a subclass of `SupportsHMA` defined in kv_connector/v1/base.py and use --no-disable-hybrid-kv-cache-manager to start vLLM.
+[2m2026-02-05T07:16:35.742682Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Added NATS service dynamo_processor
+[2m2026-02-05T07:16:35.743106Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Added NATS service dynamo_encoder
+[2m2026-02-05T07:16:35.745632Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Added NATS service dynamo_backend
+INFO 02-05 07:16:35 [model.py:530] Resolved architecture: Qwen3VLForConditionalGeneration
+INFO 02-05 07:16:35 [model.py:1545] Using max model len 262144
+WARNING 02-05 07:16:35 [logger.py:147] Default sampling parameters have been overridden by the model's Hugging Face generation config recommended from the model creator. If this is not intended, please relaunch vLLM instance with `--generation-config vllm`.
+[2m2026-02-05T07:16:35.756578Z[0m [32m INFO[0m [2mmain.init_multimodal_processor[0m[2m:[0m Waiting for Encoder Worker Instances ...
+[2m2026-02-05T07:16:35.756694Z[0m [32m INFO[0m [2mdynamo_runtime::component::client[0m[2m:[0m wait_for_instances: Found 1 instance(s) for endpoint: dynamo/encoder/generate
+[2m2026-02-05T07:16:35.761703Z[0m [32m INFO[0m [2m_core[0m[2m:[0m Registered base model '/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/' MDC
+[2m2026-02-05T07:16:35.761856Z[0m [32m INFO[0m [2mmain.init_multimodal_processor[0m[2m:[0m Starting to serve the processor endpoint...
+[2m2026-02-05T07:16:35.762045Z[0m [32m INFO[0m [2mdynamo_llm::discovery::watcher[0m[2m:[0m added model [3mmodel_name[0m[2m=[0m"/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/" [3mnamespace[0m[2m=[0m"dynamo"
+[2m2026-02-05T07:16:35.762348Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::manager[0m[2m:[0m Creating NATS request plane server
+[2m2026-02-05T07:16:35.762363Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m NatsMultiplexedServer::register_endpoint called [3mendpoint_name[0m[2m=[0mgenerate [3mnamespace[0m[2m=[0mdynamo [3mcomponent[0m[2m=[0mprocessor [3minstance_id[0m[2m=[0m7587892662813984274
+[2m2026-02-05T07:16:35.762372Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Successfully retrieved service group
+[2m2026-02-05T07:16:35.762386Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Registering NATS endpoint [3mendpoint_name[0m[2m=[0mgenerate [3mendpoint_with_id[0m[2m=[0mgenerate-694d9c2ca8d20612 [3mnamespace[0m[2m=[0mdynamo [3mcomponent[0m[2m=[0mprocessor [3minstance_id[0m[2m=[0m7587892662813984274
+[2m2026-02-05T07:16:35.762391Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Starting NATS push endpoint listener (blocking) [3mendpoint_name[0m[2m=[0mgenerate [3mendpoint_with_id[0m[2m=[0mgenerate-694d9c2ca8d20612
+INFO 02-05 07:16:35 [scheduler.py:229] Chunked prefill is enabled with max_num_batched_tokens=2560.
+INFO 02-05 07:16:35 [vllm.py:630] Asynchronous scheduling is enabled.
+INFO 02-05 07:16:35 [vllm.py:637] Disabling NCCL for DP synchronization when using async scheduling.
+WARNING 02-05 07:16:35 [_logger.py:68] Enforce eager set, overriding optimization level to -O0
+INFO 02-05 07:16:36 [core.py:97] Initializing a V1 LLM engine (v0.14.1.dev0+gb17039bcc.d20260128) with config: model='/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/', speculative_config=None, tokenizer='/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=10, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=True, quantization=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=xpu, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/, enable_prefix_caching=False, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': [], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [2560], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': None, 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'eliminate_noops': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': None, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': True}, 'local_cache_dir': None}
+/usr/local/lib/python3.12/dist-packages/torch/__init__.py:1617: UserWarning: Please use the new API settings to control TF32 behavior, such as torch.backends.cudnn.conv.fp32_precision = 'tf32' or torch.backends.cuda.matmul.fp32_precision = 'ieee'. Old settings, e.g, torch.backends.cuda.matmul.allow_tf32 = True, torch.backends.cudnn.allow_tf32 = True, allowTF32CuDNN() and allowTF32CuBLAS() will be deprecated after Pytorch 2.9. Please see https://pytorch.org/docs/main/notes/cuda.html#tensorfloat-32-tf32-on-ampere-and-later-devices (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:80.)
+  _C._set_float32_matmul_precision(precision)
+INFO 02-05 07:16:36 [parallel_state.py:1214] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://172.26.46.160:48965 backend=xccl
+INFO 02-05 07:16:36 [parallel_state.py:1425] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A
+2026:02:05-07:16:36:( 1304) |CCL_WARN| value of CCL_ATL_TRANSPORT changed to be ofi (default:mpi)
+2026:02:05-07:16:36:( 1304) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+[2m2026-02-05T07:16:38.266443Z[0m [31mERROR[0m [1mhttp-request[0m: [2mdynamo_llm::http::service::openai[0m[2m:[0m Internal server error: Failed to generate completions: NATS request failed: no responders: no responders [2m[3mmethod[0m[2m=[0mPOST [3muri[0m[2m=[0m/v1/chat/completions [3mversion[0m[2m=[0mHTTP/1.1[0m
+[2m2026-02-05T07:16:38.266519Z[0m [31mERROR[0m [1mhttp-request[0m: [2mdynamo_llm::http::service::service_v2[0m[2m:[0m request completed with server error [3mstatus[0m[2m=[0m500 [3mlatency_ms[0m[2m=[0m0 [2m[3mmethod[0m[2m=[0mPOST [3muri[0m[2m=[0m/v1/chat/completions [3mversion[0m[2m=[0mHTTP/1.1[0m
+[2m2026-02-05T07:16:38.266526Z[0m [31mERROR[0m [1mhttp-request[0m: [2mtower_http::trace::on_failure[0m[2m:[0m response failed [3mclassification[0m[2m=[0mStatus code: 500 Internal Server Error [3mlatency[0m[2m=[0m0 ms [2m[3mmethod[0m[2m=[0mPOST [3muri[0m[2m=[0m/v1/chat/completions [3mversion[0m[2m=[0mHTTP/1.1[0m
+[2026-02-05 07:16:38.365] [warning] [sycl_collector.h:388] Another subscriber already subscribed to Sycl runtime events, so PTI will not subscribe to them. It will affect correctness of PTI profile: e.g. report zero XPU time for CPU callers of GPU kernels.
+[2026-02-05 07:16:38.441] [warning] [sycl_collector.h:388] Another subscriber already subscribed to Sycl runtime events, so PTI will not subscribe to them. It will affect correctness of PTI profile: e.g. report zero XPU time for CPU callers of GPU kernels.
+INFO 02-05 07:16:39 [gpu_model_runner.py:3808] Starting to load model /software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/...
+[W205 07:16:39.067482761 OperatorEntry.cpp:218] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::geometric_(Tensor(a!) self, float p, *, Generator? generator=None) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: XPU
+  previous kernel: registered at /pytorch/aten/src/ATen/VmapModeRegistrations.cpp:37
+       new kernel: registered at /root/workspace/frameworks.ai.pytorch.ipex-gpu/build/Release/csrc/gpu/csrc/gpu/xpu/ATen/RegisterXPU_0.cpp:172 (function operator())
+[W205 07:16:39.067532150 OperatorEntry.cpp:218] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::geometric_(Tensor(a!) self, float p, *, Generator? generator=None) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: XPU
+  previous kernel: registered at /pytorch/aten/src/ATen/VmapModeRegistrations.cpp:37
+       new kernel: registered at /root/workspace/frameworks.ai.pytorch.ipex-gpu/build/Release/csrc/gpu/csrc/gpu/xpu/ATen/RegisterXPU_0.cpp:172 (function operator())
+[2m2026-02-05T07:16:39.783301Z[0m [32m INFO[0m [2mdynamo_runtime::discovery::kv_store[0m[2m:[0m KVStoreDiscovery::list: query=AllModels, prefix=v1/mdc, bucket=v1/mdc, entries=1
+INFO 02-05 07:16:39 [xpu.py:102] Using backend AttentionBackendEnum.FLASH_ATTN for vit attention
+INFO 02-05 07:16:39 [mm_encoder_attention.py:86] Using AttentionBackendEnum.FLASH_ATTN for MMEncoderAttention.
+Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:00<00:00,  1.75it/s]
+Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:00<00:00,  3.46it/s]
+
+INFO 02-05 07:16:40 [default_loader.py:291] Loading weights took 0.63 seconds
+INFO 02-05 07:16:41 [gpu_model_runner.py:3905] Model loading took 0.81 GiB memory and 0.972034 seconds
+INFO 02-05 07:16:41 [core.py:273] init engine (profile, create kv cache, warmup model) took 0.00 seconds
+WARNING 02-05 07:16:41 [_logger.py:68] Disabling chunked prefill for model without KVCache
+INFO 02-05 07:16:41 [llm.py:347] Supported tasks: ('generate',)
+[2m2026-02-05T07:16:41.387205Z[0m [32m INFO[0m [2mencode_worker_handler.async_init[0m[2m:[0m Encode worker startup started.
+[2m2026-02-05T07:16:41.387293Z[0m [32m INFO[0m [2mencode_worker_handler.async_init[0m[2m:[0m Encode worker startup completed.
+[2m2026-02-05T07:16:41.387313Z[0m [32m INFO[0m [2mmain.init_multimodal_encode_worker[0m[2m:[0m Waiting for PD Worker Instances ...
+[2m2026-02-05T07:16:43.008003Z[0m [32m INFO[0m [2mcore.__init__[0m[2m:[0m Initializing a V1 LLM engine (v0.14.1.dev0+gb17039bcc.d20260128) with config: model='/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/', speculative_config=None, tokenizer='/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=True, quantization=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=xpu, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': [], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': None, 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'eliminate_noops': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': None, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': True}, 'local_cache_dir': None}
+[2m2026-02-05T07:16:43.008127Z[0m [33m WARN[0m [2m_logger.warning[0m[2m:[0m Reducing Torch parallelism from 28 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+[2m2026-02-05T07:16:43.033587Z[0m [32m INFO[0m [2mcore.__init__[0m[2m:[0m Initializing a V1 LLM engine (v0.14.1.dev0+gb17039bcc.d20260128) with config: model='/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/', speculative_config=None, tokenizer='/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.float16, max_seq_len=8192, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, disable_custom_all_reduce=True, quantization=None, enforce_eager=True, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=xpu, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_fallback=False, disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False), seed=0, served_model_name=/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'level': None, 'mode': <CompilationMode.NONE: 0>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['all'], 'splitting_ops': [], 'compile_mm_encoder': False, 'compile_sizes': [], 'compile_ranges_split_points': [2048], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.NONE: 0>, 'cudagraph_num_of_warmups': 0, 'cudagraph_capture_sizes': None, 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'eliminate_noops': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False}, 'max_cudagraph_capture_size': None, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': True}, 'local_cache_dir': None}
+[2m2026-02-05T07:16:43.033708Z[0m [33m WARN[0m [2m_logger.warning[0m[2m:[0m Reducing Torch parallelism from 28 threads to 1 to avoid unnecessary CPU contention. Set OMP_NUM_THREADS in the external environment to tune this value as needed.
+[2026-02-05 07:16:45.137] [warning] [sycl_collector.h:388] Another subscriber already subscribed to Sycl runtime events, so PTI will not subscribe to them. It will affect correctness of PTI profile: e.g. report zero XPU time for CPU callers of GPU kernels.
+[2026-02-05 07:16:45.162] [warning] [sycl_collector.h:388] Another subscriber already subscribed to Sycl runtime events, so PTI will not subscribe to them. It will affect correctness of PTI profile: e.g. report zero XPU time for CPU callers of GPU kernels.
+[W205 07:16:46.732050562 OperatorEntry.cpp:218] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::geometric_(Tensor(a!) self, float p, *, Generator? generator=None) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: XPU
+  previous kernel: registered at /pytorch/aten/src/ATen/VmapModeRegistrations.cpp:37
+       new kernel: registered at /root/workspace/frameworks.ai.pytorch.ipex-gpu/build/Release/csrc/gpu/csrc/gpu/xpu/ATen/RegisterXPU_0.cpp:172 (function operator())
+[W205 07:16:46.894833881 OperatorEntry.cpp:218] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::geometric_(Tensor(a!) self, float p, *, Generator? generator=None) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: XPU
+  previous kernel: registered at /pytorch/aten/src/ATen/VmapModeRegistrations.cpp:37
+       new kernel: registered at /root/workspace/frameworks.ai.pytorch.ipex-gpu/build/Release/csrc/gpu/csrc/gpu/xpu/ATen/RegisterXPU_0.cpp:172 (function operator())
+/usr/local/lib/python3.12/dist-packages/torch/__init__.py:1617: UserWarning: Please use the new API settings to control TF32 behavior, such as torch.backends.cudnn.conv.fp32_precision = 'tf32' or torch.backends.cuda.matmul.fp32_precision = 'ieee'. Old settings, e.g, torch.backends.cuda.matmul.allow_tf32 = True, torch.backends.cudnn.allow_tf32 = True, allowTF32CuDNN() and allowTF32CuBLAS() will be deprecated after Pytorch 2.9. Please see https://pytorch.org/docs/main/notes/cuda.html#tensorfloat-32-tf32-on-ampere-and-later-devices (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:80.)
+  _C._set_float32_matmul_precision(precision)
+[2m2026-02-05T07:16:50.131725Z[0m [32m INFO[0m [2mparallel_state.init_distributed_environment[0m[2m:[0m world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://127.0.0.1:36685 backend=xccl
+[2m2026-02-05T07:16:50.138987Z[0m [32m INFO[0m [2mparallel_state.initialize_model_parallel[0m[2m:[0m rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A
+2026:02:05-07:16:50:( 3126) |CCL_WARN| value of CCL_ATL_TRANSPORT changed to be ofi (default:mpi)
+2026:02:05-07:16:50:( 3126) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+/usr/local/lib/python3.12/dist-packages/torch/__init__.py:1617: UserWarning: Please use the new API settings to control TF32 behavior, such as torch.backends.cudnn.conv.fp32_precision = 'tf32' or torch.backends.cuda.matmul.fp32_precision = 'ieee'. Old settings, e.g, torch.backends.cuda.matmul.allow_tf32 = True, torch.backends.cudnn.allow_tf32 = True, allowTF32CuDNN() and allowTF32CuBLAS() will be deprecated after Pytorch 2.9. Please see https://pytorch.org/docs/main/notes/cuda.html#tensorfloat-32-tf32-on-ampere-and-later-devices (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:80.)
+  _C._set_float32_matmul_precision(precision)
+[2m2026-02-05T07:16:50.318739Z[0m [32m INFO[0m [2mparallel_state.init_distributed_environment[0m[2m:[0m world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://127.0.0.1:60475 backend=xccl
+[2m2026-02-05T07:16:50.325960Z[0m [32m INFO[0m [2mparallel_state.initialize_model_parallel[0m[2m:[0m rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A
+2026:02:05-07:16:50:( 3121) |CCL_WARN| value of CCL_ATL_TRANSPORT changed to be ofi (default:mpi)
+2026:02:05-07:16:50:( 3121) |CCL_WARN| could not get local_idx/count from environment variables, trying to get them from ATL
+[2m2026-02-05T07:16:52.907141Z[0m [32m INFO[0m [2mgpu_model_runner.load_model[0m[2m:[0m Starting to load model /software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/...
+[2m2026-02-05T07:16:53.090103Z[0m [32m INFO[0m [2mgpu_model_runner.load_model[0m[2m:[0m Starting to load model /software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/...
+[2m2026-02-05T07:16:53.555063Z[0m [32m INFO[0m [2mxpu.get_vit_attn_backend[0m[2m:[0m Using backend AttentionBackendEnum.FLASH_ATTN for vit attention
+[2m2026-02-05T07:16:53.555783Z[0m [32m INFO[0m [2mmm_encoder_attention.__init__[0m[2m:[0m Using AttentionBackendEnum.FLASH_ATTN for MMEncoderAttention.
+[2m2026-02-05T07:16:53.614629Z[0m [32m INFO[0m [2mxpu.get_attn_backend_cls[0m[2m:[0m Setting VLLM_KV_CACHE_LAYOUT to 'NHD' for XPU; only NHD layout is supported by XPU attention kernels.
+[2m2026-02-05T07:16:53.614678Z[0m [32m INFO[0m [2mxpu.get_attn_backend_cls[0m[2m:[0m Using Flash Attention backend.
+[0;36m(Worker pid=3126)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[2m2026-02-05T07:16:54.183835Z[0m [32m INFO[0m [2mxpu.get_vit_attn_backend[0m[2m:[0m Using backend AttentionBackendEnum.FLASH_ATTN for vit attention
+[2m2026-02-05T07:16:54.184597Z[0m [32m INFO[0m [2mmm_encoder_attention.__init__[0m[2m:[0m Using AttentionBackendEnum.FLASH_ATTN for MMEncoderAttention.
+[0;36m(Worker pid=3126)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [00:02<00:02,  2.80s/it]
+[2m2026-02-05T07:17:00.193569Z[0m [32m INFO[0m [2mxpu.get_attn_backend_cls[0m[2m:[0m Setting VLLM_KV_CACHE_LAYOUT to 'NHD' for XPU; only NHD layout is supported by XPU attention kernels.
+[2m2026-02-05T07:17:00.193631Z[0m [32m INFO[0m [2mxpu.get_attn_backend_cls[0m[2m:[0m Using Flash Attention backend.
+[0;36m(Worker pid=3126)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:23<00:00, 13.33s/it]
+[0;36m(Worker pid=3126)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [00:23<00:00, 11.75s/it]
+[0;36m(Worker pid=3126)[0;0m 
+[2m2026-02-05T07:17:17.368835Z[0m [32m INFO[0m [2mdefault_loader.load_weights[0m[2m:[0m Loading weights took 23.56 seconds
+[2m2026-02-05T07:17:17.899361Z[0m [32m INFO[0m [2mgpu_model_runner.load_model[0m[2m:[0m Model loading took 8.59 GiB memory and 24.130856 seconds
+[2m2026-02-05T07:17:17.996783Z[0m [32m INFO[0m [2mxpu_worker.determine_available_memory[0m[2m:[0m Before memory profiling run, total GPU memory: 23256.00 MB, model load takes 8807.96 MB, free gpu memory is 317.86 MB.
+[2m2026-02-05T07:17:17.996841Z[0m [32m INFO[0m [2mgpu_model_runner.profile_run[0m[2m:[0m Encoder cache will be initialized with a budget of 16384 tokens, and profiled with 1 image items of the maximum feature size.
+[2m2026-02-05T07:17:39.221582Z[0m [32m INFO[0m [2mxpu_worker.determine_available_memory[0m[2m:[0m After memory profiling run, peak memory usage is 10911.96 MB,torch mem is 8807.96 MB, non-torch mem is 128.00 MB, free gpu memory is 14320.04 MB.
+[2m2026-02-05T07:17:39.223067Z[0m [32m INFO[0m [2mkv_cache_utils._report_kv_cache_config[0m[2m:[0m GPU KV cache size: 71,232 tokens
+[2m2026-02-05T07:17:39.223149Z[0m [32m INFO[0m [2mkv_cache_utils._report_kv_cache_config[0m[2m:[0m Maximum concurrency for 8,192 tokens per request: 8.70x
+[2m2026-02-05T07:17:39.235815Z[0m [32m INFO[0m [2mnixl_connector[0m[2m:[0m NIXL is available
+[2m2026-02-05T07:17:39.237897Z[0m [32m INFO[0m [2mfactory.create_connector[0m[2m:[0m Creating v1 connector with name: NixlConnector and engine_id: d216fa88-3843-4355-a2d9-1cae85f39f53
+[2m2026-02-05T07:17:39.237950Z[0m [33m WARN[0m [2m_logger.warning[0m[2m:[0m Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.
+[2m2026-02-05T07:17:39.237979Z[0m [32m INFO[0m [2mnixl_connector.__init__[0m[2m:[0m Initializing NIXL wrapper
+[2m2026-02-05T07:17:39.238001Z[0m [32m INFO[0m [2mnixl_connector.__init__[0m[2m:[0m Initializing NIXL worker d216fa88-3843-4355-a2d9-1cae85f39f53
+[0;36m(Worker pid=3126)[0;0m 2026-02-05 07:17:40 NIXL INFO    _api.py:361 Backend UCX was instantiated
+[0;36m(Worker pid=3126)[0;0m 2026-02-05 07:17:40 NIXL INFO    _api.py:251 Initialized NIXL agent: 981071bd-83e5-4089-b3a1-1091f23f151e
+[2m2026-02-05T07:17:40.019059Z[0m [32m INFO[0m [2mutils.get_kv_cache_layout[0m[2m:[0m `_KV_CACHE_LAYOUT_OVERRIDE` variable detected. Setting KV cache layout to NHD.
+[2m2026-02-05T07:17:40.153980Z[0m [32m INFO[0m [2mnixl_connector.initialize_host_xfer_buffer[0m[2m:[0m 'enable_permute_local_kv' flag is enabled while device KV Layout is NHD. Init host buffer with HND to better support Decode/Prefill TP_ratio > 1.
+[2m2026-02-05T07:17:40.154353Z[0m [32m INFO[0m [2mnixl_connector.register_kv_caches[0m[2m:[0m Registering KV_Caches. use_mla: False, kv_buffer_device: cpu, use_host_buffer: True
+[2m2026-02-05T07:17:40.430609Z[0m [32m INFO[0m [2mcore._initialize_kv_caches[0m[2m:[0m init engine (profile, create kv cache, warmup model) took 22.53 seconds
+[2m2026-02-05T07:17:40.918522Z[0m [32m INFO[0m [2mnixl_connector[0m[2m:[0m NIXL is available
+[2m2026-02-05T07:17:40.920585Z[0m [32m INFO[0m [2mfactory.create_connector[0m[2m:[0m Creating v1 connector with name: NixlConnector and engine_id: d216fa88-3843-4355-a2d9-1cae85f39f53
+[2m2026-02-05T07:17:40.920629Z[0m [33m WARN[0m [2m_logger.warning[0m[2m:[0m Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.
+[2m2026-02-05T07:17:40.920673Z[0m [32m INFO[0m [2mnixl_connector.__init__[0m[2m:[0m Initializing NIXL Scheduler d216fa88-3843-4355-a2d9-1cae85f39f53
+[2m2026-02-05T07:17:43.590742Z[0m [32m INFO[0m [2mvllm.__post_init__[0m[2m:[0m Asynchronous scheduling is enabled.
+[2m2026-02-05T07:17:43.590806Z[0m [33m WARN[0m [2m_logger.warning[0m[2m:[0m Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+[2m2026-02-05T07:17:43.590875Z[0m [33m WARN[0m [2m_logger.warning[0m[2m:[0m KV cache events are disabled, but the scheduler is configured to publish them. Modify KVEventsConfig.enable_kv_cache_events to True to enable.
+INFO 02-05 07:17:43 [nixl_connector.py:97] NIXL is available
+[2m2026-02-05T07:17:43.739042Z[0m [32m INFO[0m [2mmain.setup_vllm_engine[0m[2m:[0m VllmWorker for /software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/ has been initialized
+[2m2026-02-05T07:17:43.739442Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Added NATS service dynamo_decoder
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/dynamo/vllm/multimodal_handlers/preprocessed_handler.py", line 245, in generate
+    async for response in self._generate(request, multimodal_inputs, context):
+  File "/usr/local/lib/python3.12/dist-packages/dynamo/vllm/multimodal_handlers/preprocessed_handler.py", line 110, in _generate
+    await self.encode_worker_client.round_robin(
+Exception: no instances found for endpoint dynamo/encoder/generate
+[2m2026-02-05T07:22:32.087599Z[0m [31mERROR[0m [1mhttp-request[0m: [2mdynamo_llm::http::service::openai[0m[2m:[0m Backend error detected: (500, Json(ErrorMessage { message: "a python exception was caught while processing the async generator: Exception: no instances found for endpoint dynamo/encoder/generate", error_type: "Internal Server Error", code: 500 })) [3mrequest_id[0m[2m=[0m"8b45e8c6-38d6-4cfc-87c8-335a3e493b42" [2m[3mmethod[0m[2m=[0mPOST [3muri[0m[2m=[0m/v1/chat/completions [3mversion[0m[2m=[0mHTTP/1.1[0m
+[2m2026-02-05T07:22:32.088157Z[0m [31mERROR[0m [1mhttp-request[0m: [2mdynamo_llm::http::service::service_v2[0m[2m:[0m request completed with server error [3mstatus[0m[2m=[0m500 [3mlatency_ms[0m[2m=[0m28 [2m[3mmethod[0m[2m=[0mPOST [3muri[0m[2m=[0m/v1/chat/completions [3mversion[0m[2m=[0mHTTP/1.1[0m
+[2m2026-02-05T07:22:32.088168Z[0m [31mERROR[0m [1mhttp-request[0m: [2mtower_http::trace::on_failure[0m[2m:[0m response failed [3mclassification[0m[2m=[0mStatus code: 500 Internal Server Error [3mlatency[0m[2m=[0m28 ms [2m[3mmethod[0m[2m=[0mPOST [3muri[0m[2m=[0m/v1/chat/completions [3mversion[0m[2m=[0mHTTP/1.1[0m
+[0;36m(Worker pid=3121)[0;0m Loading safetensors checkpoint shards:   0% Completed | 0/2 [00:00<?, ?it/s]
+[0;36m(Worker pid=3121)[0;0m Loading safetensors checkpoint shards:  50% Completed | 1/2 [26:22<26:22, 1582.25s/it]
+[0;36m(Worker pid=3121)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [37:37<00:00, 1048.69s/it]
+[0;36m(Worker pid=3121)[0;0m Loading safetensors checkpoint shards: 100% Completed | 2/2 [37:37<00:00, 1128.72s/it]
+[0;36m(Worker pid=3121)[0;0m 
+[2m2026-02-05T08:03:14.718398Z[0m [32m INFO[0m [2mdefault_loader.load_weights[0m[2m:[0m Loading weights took 2257.53 seconds
+[2m2026-02-05T08:03:16.576074Z[0m [32m INFO[0m [2mgpu_model_runner.load_model[0m[2m:[0m Model loading took 8.59 GiB memory and 2782.590324 seconds
+[2m2026-02-05T08:03:18.874681Z[0m [32m INFO[0m [2mxpu_worker.determine_available_memory[0m[2m:[0m Before memory profiling run, total GPU memory: 23256.00 MB, model load takes 8807.96 MB, free gpu memory is 317.89 MB.
+[2m2026-02-05T08:03:18.874751Z[0m [32m INFO[0m [2mgpu_model_runner.profile_run[0m[2m:[0m Encoder cache will be initialized with a budget of 16384 tokens, and profiled with 1 image items of the maximum feature size.
+[2m2026-02-05T08:04:16.581836Z[0m [32m INFO[0m [2mshm_broadcast.acquire_read[0m[2m:[0m No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+[2m2026-02-05T08:05:16.581751Z[0m [32m INFO[0m [2mshm_broadcast.acquire_read[0m[2m:[0m No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+[2m2026-02-05T08:06:16.581753Z[0m [32m INFO[0m [2mshm_broadcast.acquire_read[0m[2m:[0m No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+[2m2026-02-05T08:07:16.581751Z[0m [32m INFO[0m [2mshm_broadcast.acquire_read[0m[2m:[0m No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+[2m2026-02-05T08:08:16.581748Z[0m [32m INFO[0m [2mshm_broadcast.acquire_read[0m[2m:[0m No available shared memory broadcast block found in 60 seconds. This typically happens when some processes are hanging or doing some time-consuming work (e.g. compilation, weight/kv cache quantization).
+[2m2026-02-05T08:08:19.023353Z[0m [32m INFO[0m [2mxpu_worker.determine_available_memory[0m[2m:[0m After memory profiling run, peak memory usage is 10911.96 MB,torch mem is 8807.96 MB, non-torch mem is 128.00 MB, free gpu memory is 14320.04 MB.
+[2m2026-02-05T08:08:19.024831Z[0m [32m INFO[0m [2mkv_cache_utils._report_kv_cache_config[0m[2m:[0m GPU KV cache size: 71,232 tokens
+[2m2026-02-05T08:08:19.024917Z[0m [32m INFO[0m [2mkv_cache_utils._report_kv_cache_config[0m[2m:[0m Maximum concurrency for 8,192 tokens per request: 8.70x
+[2m2026-02-05T08:08:19.049011Z[0m [32m INFO[0m [2mnixl_connector[0m[2m:[0m NIXL is available
+[2m2026-02-05T08:08:19.051059Z[0m [32m INFO[0m [2mfactory.create_connector[0m[2m:[0m Creating v1 connector with name: NixlConnector and engine_id: 20172690-3fd5-40eb-bfc3-2abd384bdc17
+[2m2026-02-05T08:08:19.051099Z[0m [33m WARN[0m [2m_logger.warning[0m[2m:[0m Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.
+[2m2026-02-05T08:08:19.051126Z[0m [32m INFO[0m [2mnixl_connector.__init__[0m[2m:[0m Initializing NIXL wrapper
+[2m2026-02-05T08:08:19.051147Z[0m [32m INFO[0m [2mnixl_connector.__init__[0m[2m:[0m Initializing NIXL worker 20172690-3fd5-40eb-bfc3-2abd384bdc17
+[0;36m(Worker pid=3121)[0;0m 2026-02-05 08:08:20 NIXL INFO    _api.py:361 Backend UCX was instantiated
+[0;36m(Worker pid=3121)[0;0m 2026-02-05 08:08:20 NIXL INFO    _api.py:251 Initialized NIXL agent: 1916369c-d7aa-416a-9cc3-00b65f69057a
+[2m2026-02-05T08:08:20.369094Z[0m [32m INFO[0m [2mutils.get_kv_cache_layout[0m[2m:[0m `_KV_CACHE_LAYOUT_OVERRIDE` variable detected. Setting KV cache layout to NHD.
+[2m2026-02-05T08:08:20.501862Z[0m [32m INFO[0m [2mnixl_connector.initialize_host_xfer_buffer[0m[2m:[0m 'enable_permute_local_kv' flag is enabled while device KV Layout is NHD. Init host buffer with HND to better support Decode/Prefill TP_ratio > 1.
+[2m2026-02-05T08:08:20.502213Z[0m [32m INFO[0m [2mnixl_connector.register_kv_caches[0m[2m:[0m Registering KV_Caches. use_mla: False, kv_buffer_device: cpu, use_host_buffer: True
+[2m2026-02-05T08:08:20.611822Z[0m [32m INFO[0m [2mcore._initialize_kv_caches[0m[2m:[0m init engine (profile, create kv cache, warmup model) took 304.03 seconds
+[2m2026-02-05T08:08:21.146682Z[0m [32m INFO[0m [2mnixl_connector[0m[2m:[0m NIXL is available
+[2m2026-02-05T08:08:21.149860Z[0m [32m INFO[0m [2mfactory.create_connector[0m[2m:[0m Creating v1 connector with name: NixlConnector and engine_id: 20172690-3fd5-40eb-bfc3-2abd384bdc17
+[2m2026-02-05T08:08:21.149952Z[0m [33m WARN[0m [2m_logger.warning[0m[2m:[0m Initializing KVConnectorBase_V1. This API is experimental and subject to change in the future as we iterate the design.
+[2m2026-02-05T08:08:21.150042Z[0m [32m INFO[0m [2mnixl_connector.__init__[0m[2m:[0m Initializing NIXL Scheduler 20172690-3fd5-40eb-bfc3-2abd384bdc17
+[2m2026-02-05T08:08:23.628148Z[0m [32m INFO[0m [2mvllm.__post_init__[0m[2m:[0m Asynchronous scheduling is enabled.
+[2m2026-02-05T08:08:23.628213Z[0m [33m WARN[0m [2m_logger.warning[0m[2m:[0m Inductor compilation was disabled by user settings, optimizations settings that are only active during inductor compilation will be ignored.
+[2m2026-02-05T08:08:23.628284Z[0m [33m WARN[0m [2m_logger.warning[0m[2m:[0m KV cache events are disabled, but the scheduler is configured to publish them. Modify KVEventsConfig.enable_kv_cache_events to True to enable.
+INFO 02-05 08:08:23 [nixl_connector.py:97] NIXL is available
+[2m2026-02-05T08:08:23.760805Z[0m [32m INFO[0m [2mmain.setup_vllm_engine[0m[2m:[0m VllmWorker for /software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/ has been initialized
+INFO 02-05 08:08:23 [model.py:530] Resolved architecture: Qwen3VLForConditionalGeneration
+WARNING 02-05 08:08:23 [_logger.py:68] Casting torch.bfloat16 to torch.float16.
+INFO 02-05 08:08:23 [model.py:1545] Using max model len 8192
+[2m2026-02-05T08:08:23.771737Z[0m [32m INFO[0m [2mengine_monitor.__init__[0m[2m:[0m VllmEngineMonitor initialized and health check task started.
+[2m2026-02-05T08:08:23.771871Z[0m [32m INFO[0m [2mworker_handler.async_init[0m[2m:[0m Multimodal Decode Worker async initialization completed.
+[2m2026-02-05T08:08:23.771895Z[0m [32m INFO[0m [2mmain.setup_kv_event_publisher[0m[2m:[0m KV event publishing skipped: enable_kv_cache_events=False in kv_events_config
+[2m2026-02-05T08:08:23.775016Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::manager[0m[2m:[0m Creating NATS request plane server
+[2m2026-02-05T08:08:23.775044Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m NatsMultiplexedServer::register_endpoint called [3mendpoint_name[0m[2m=[0mgenerate [3mnamespace[0m[2m=[0mdynamo [3mcomponent[0m[2m=[0mdecoder [3minstance_id[0m[2m=[0m7587892662813984268
+[2m2026-02-05T08:08:23.775058Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Successfully retrieved service group
+[2m2026-02-05T08:08:23.775073Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Registering NATS endpoint [3mendpoint_name[0m[2m=[0mgenerate [3mendpoint_with_id[0m[2m=[0mgenerate-694d9c2ca8d2060c [3mnamespace[0m[2m=[0mdynamo [3mcomponent[0m[2m=[0mdecoder [3minstance_id[0m[2m=[0m7587892662813984268
+[2m2026-02-05T08:08:23.775079Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Starting NATS push endpoint listener (blocking) [3mendpoint_name[0m[2m=[0mgenerate [3mendpoint_with_id[0m[2m=[0mgenerate-694d9c2ca8d2060c
+[2m2026-02-05T08:08:23.775434Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m NatsMultiplexedServer::register_endpoint called [3mendpoint_name[0m[2m=[0mclear_kv_blocks [3mnamespace[0m[2m=[0mdynamo [3mcomponent[0m[2m=[0mdecoder [3minstance_id[0m[2m=[0m7587892662813984268
+[2m2026-02-05T08:08:23.775460Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Successfully retrieved service group
+[2m2026-02-05T08:08:23.775482Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Registering NATS endpoint [3mendpoint_name[0m[2m=[0mclear_kv_blocks [3mendpoint_with_id[0m[2m=[0mclear_kv_blocks-694d9c2ca8d2060c [3mnamespace[0m[2m=[0mdynamo [3mcomponent[0m[2m=[0mdecoder [3minstance_id[0m[2m=[0m7587892662813984268
+[2m2026-02-05T08:08:23.775487Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Starting NATS push endpoint listener (blocking) [3mendpoint_name[0m[2m=[0mclear_kv_blocks [3mendpoint_with_id[0m[2m=[0mclear_kv_blocks-694d9c2ca8d2060c
+[2m2026-02-05T08:08:23.788017Z[0m [32m INFO[0m [2mdynamo_runtime::component::client[0m[2m:[0m wait_for_instances: Found 1 instance(s) for endpoint: dynamo/decoder/generate
+[2m2026-02-05T08:08:23.788360Z[0m [32m INFO[0m [2mmain.init_multimodal_worker[0m[2m:[0m Connected to decode worker for disaggregated mode
+INFO 02-05 08:08:23 [model.py:530] Resolved architecture: Qwen3VLForConditionalGeneration
+WARNING 02-05 08:08:23 [_logger.py:68] Casting torch.bfloat16 to torch.float16.
+INFO 02-05 08:08:23 [model.py:1545] Using max model len 8192
+[2m2026-02-05T08:08:23.797876Z[0m [32m INFO[0m [2mengine_monitor.__init__[0m[2m:[0m VllmEngineMonitor initialized and health check task started.
+[2m2026-02-05T08:08:23.797952Z[0m [32m INFO[0m [2mworker_handler.__init__[0m[2m:[0m Multimodal PD Worker startup started.
+[2m2026-02-05T08:08:23.797979Z[0m [32m INFO[0m [2mworker_handler.__init__[0m[2m:[0m Multimodal PD Worker has been initialized
+[2m2026-02-05T08:08:23.798064Z[0m [32m INFO[0m [2mworker_handler.async_init[0m[2m:[0m Multimodal PD Worker async initialization completed.
+[2m2026-02-05T08:08:23.798086Z[0m [32m INFO[0m [2mmain.setup_kv_event_publisher[0m[2m:[0m KV event publishing skipped: enable_kv_cache_events=False in kv_events_config
+[2m2026-02-05T08:08:23.798637Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::manager[0m[2m:[0m Creating NATS request plane server
+[2m2026-02-05T08:08:23.798653Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m NatsMultiplexedServer::register_endpoint called [3mendpoint_name[0m[2m=[0mgenerate [3mnamespace[0m[2m=[0mdynamo [3mcomponent[0m[2m=[0mbackend [3minstance_id[0m[2m=[0m7587892662813984270
+[2m2026-02-05T08:08:23.798664Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Successfully retrieved service group
+[2m2026-02-05T08:08:23.798678Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Registering NATS endpoint [3mendpoint_name[0m[2m=[0mgenerate [3mendpoint_with_id[0m[2m=[0mgenerate-694d9c2ca8d2060e [3mnamespace[0m[2m=[0mdynamo [3mcomponent[0m[2m=[0mbackend [3minstance_id[0m[2m=[0m7587892662813984270
+[2m2026-02-05T08:08:23.798683Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Starting NATS push endpoint listener (blocking) [3mendpoint_name[0m[2m=[0mgenerate [3mendpoint_with_id[0m[2m=[0mgenerate-694d9c2ca8d2060e
+[2m2026-02-05T08:08:23.798705Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m NatsMultiplexedServer::register_endpoint called [3mendpoint_name[0m[2m=[0mclear_kv_blocks [3mnamespace[0m[2m=[0mdynamo [3mcomponent[0m[2m=[0mbackend [3minstance_id[0m[2m=[0m7587892662813984270
+[2m2026-02-05T08:08:23.798722Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Successfully retrieved service group
+[2m2026-02-05T08:08:23.798734Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Registering NATS endpoint [3mendpoint_name[0m[2m=[0mclear_kv_blocks [3mendpoint_with_id[0m[2m=[0mclear_kv_blocks-694d9c2ca8d2060e [3mnamespace[0m[2m=[0mdynamo [3mcomponent[0m[2m=[0mbackend [3minstance_id[0m[2m=[0m7587892662813984270
+[2m2026-02-05T08:08:23.798740Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Starting NATS push endpoint listener (blocking) [3mendpoint_name[0m[2m=[0mclear_kv_blocks [3mendpoint_with_id[0m[2m=[0mclear_kv_blocks-694d9c2ca8d2060e
+[2m2026-02-05T08:08:23.810805Z[0m [32m INFO[0m [2mdynamo_runtime::component::client[0m[2m:[0m wait_for_instances: Found 1 instance(s) for endpoint: dynamo/backend/generate
+[2m2026-02-05T08:08:23.811230Z[0m [32m INFO[0m [2mmain.init_multimodal_encode_worker[0m[2m:[0m Starting to serve the encode worker endpoint...
+[2m2026-02-05T08:08:23.811877Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::manager[0m[2m:[0m Creating NATS request plane server
+[2m2026-02-05T08:08:23.811891Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m NatsMultiplexedServer::register_endpoint called [3mendpoint_name[0m[2m=[0mgenerate [3mnamespace[0m[2m=[0mdynamo [3mcomponent[0m[2m=[0mencoder [3minstance_id[0m[2m=[0m7587892662813984266
+[2m2026-02-05T08:08:23.811903Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Successfully retrieved service group
+[2m2026-02-05T08:08:23.811927Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Registering NATS endpoint [3mendpoint_name[0m[2m=[0mgenerate [3mendpoint_with_id[0m[2m=[0mgenerate-694d9c2ca8d2060a [3mnamespace[0m[2m=[0mdynamo [3mcomponent[0m[2m=[0mencoder [3minstance_id[0m[2m=[0m7587892662813984266
+[2m2026-02-05T08:08:23.811932Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::ingress::nats_server[0m[2m:[0m Starting NATS push endpoint listener (blocking) [3mendpoint_name[0m[2m=[0mgenerate [3mendpoint_with_id[0m[2m=[0mgenerate-694d9c2ca8d2060a
+[2m2026-02-05T08:11:18.621226Z[0m [32m INFO[0m [2mhttp_client.get_http_client[0m[2m:[0m Shared HTTP client initialized with timeout=30.0s
+[2m2026-02-05T08:11:19.494261Z[0m [32m INFO[0m [2mworker_handler.generate[0m[2m:[0m PD: Loading local safetensors file
+[2m2026-02-05T08:11:19.498070Z[0m [32m INFO[0m [2mworker_handler.generate[0m[2m:[0m Prepared multimodal data size: 2
+[2m2026-02-05T08:11:19.505726Z[0m [32m INFO[0m [2mworker_handler.generate[0m[2m:[0m defaultdict(<class 'list'>, {'image': {'image_embeds': tensor([[ 0.4238, -0.5117,  0.9062,  ...,  0.5273,  0.3633,  0.1318],
+        [ 6.7812, -1.6016,  0.5938,  ...,  2.0938,  0.1416,  0.0435],
+        [ 3.6250, -0.1357,  0.2617,  ...,  0.0129, -0.0234, -0.2578],
+        ...,
+        [ 4.8125, -1.3125,  1.6094,  ...,  0.3516,  0.0415,  0.0801],
+        [ 5.1562, -1.7969,  1.0234,  ...,  0.1245, -0.1787,  0.1816],
+        [ 2.1094, -0.5742,  1.2656,  ...,  1.1250,  0.4043, -0.2061]],
+       dtype=torch.float16), 'image_grid_thw': tensor([[ 1, 30, 40]])}})
+[2m2026-02-05T08:11:24.043725Z[0m [32m INFO[0m [2mnixl_connector._nixl_handshake[0m[2m:[0m NIXL compatibility check passed (hash: 54729836f2a7b1e5c59a0364797dacfb058964d5f8a056bf06dd76e9df449685)

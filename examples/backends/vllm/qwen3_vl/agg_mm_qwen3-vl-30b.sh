@@ -1,0 +1,2 @@
+export MODEL="/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/"
+python -m dynamo.vllm --enable-multimodal --model $MODEL --connector none --enforce-eager --dtype float16 --block-size 64 --max-model-len 4096 --gpu-memory-utilization 0.7 --quantization fp8 2>&1 | tee log_s.txt &

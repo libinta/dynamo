@@ -47,17 +47,19 @@ done
 # TCP is preferred for multimodal workloads because it overcomes:
 # - NATS default 1MB max payload limit (multimodal base64 images can exceed this)
 export DYN_REQUEST_PLANE=tcp
-
+export DYN_HTTP_PORT=8001  
 # Start frontend with Rust OpenAIPreprocessor
 # dynamo.frontend accepts either --http-port flag or DYN_HTTP_PORT env var (defaults to 8000)
-python -m dynamo.frontend &
+python -m dynamo.frontend --http-port $DYN_HTTP_PORT &
 
 # Configure GPU memory optimization for specific models (if no extra args override)
 MODEL_SPECIFIC_ARGS=""
 if [[ "$MODEL_NAME" == "Qwen/Qwen2.5-VL-7B-Instruct" ]]; then
-    MODEL_SPECIFIC_ARGS="--gpu-memory-utilization 0.85 --max-model-len 4096"
+    MODEL_SPECIFIC_ARGS="--gpu-memory-utilization 0.55 --max-model-len 4096"
 elif [[ "$MODEL_NAME" == "llava-hf/llava-1.5-7b-hf" ]]; then
     MODEL_SPECIFIC_ARGS="--gpu-memory-utilization 0.85 --max-model-len 4096"
+else
+    MODEL_SPECIFIC_ARGS="--gpu-memory-utilization 0.55 --max-model-len 8192 --dtype float16 --enforce-eager --block-size 64"
 fi
 
 # Start vLLM worker with vision model

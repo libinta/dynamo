@@ -1,0 +1,182 @@
+[2m2026-02-05T17:01:39.085939Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Initializing KV store discovery backend
+[2m2026-02-05T17:01:39.086041Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::manager[0m[2m:[0m Initializing NetworkManager with NATS request plane [3mmode[0m[2m=[0mnats
+[2m2026-02-05T17:01:39.090057Z[0m [32m INFO[0m [2mdynamo_llm::http::service::service_v2[0m[2m:[0m Starting HTTP(S) service [3mprotocol[0m[2m=[0m"HTTP" [3maddress[0m[2m=[0m"0.0.0.0:8001"
+[2m2026-02-05T17:01:39.101470Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Added NATS service dynamo_processor
+[2m2026-02-05T17:01:39.101547Z[0m [32m INFO[0m [2mdynamo_llm::http::service::service_v2[0m[2m:[0m chat endpoints enabled
+[2m2026-02-05T17:01:39.395978Z[0m [32m INFO[0m [2mdynamo_llm::discovery::watcher[0m[2m:[0m Chat completions is ready
+[2m2026-02-05T17:01:39.415061Z[0m [32m INFO[0m [2mdynamo_llm::discovery::watcher[0m[2m:[0m added model [3mmodel_name[0m[2m=[0m"/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/" [3mnamespace[0m[2m=[0m"dynamo"
+[W205 17:01:41.451954019 OperatorEntry.cpp:218] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::geometric_(Tensor(a!) self, float p, *, Generator? generator=None) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: XPU
+  previous kernel: registered at /pytorch/aten/src/ATen/VmapModeRegistrations.cpp:37
+       new kernel: registered at /root/workspace/frameworks.ai.pytorch.ipex-gpu/build/Release/csrc/gpu/csrc/gpu/xpu/ATen/RegisterXPU_0.cpp:172 (function operator())
+[W205 17:01:41.451954711 OperatorEntry.cpp:218] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::geometric_(Tensor(a!) self, float p, *, Generator? generator=None) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: XPU
+  previous kernel: registered at /pytorch/aten/src/ATen/VmapModeRegistrations.cpp:37
+       new kernel: registered at /root/workspace/frameworks.ai.pytorch.ipex-gpu/build/Release/csrc/gpu/csrc/gpu/xpu/ATen/RegisterXPU_0.cpp:172 (function operator())
+[W205 17:01:41.451954956 OperatorEntry.cpp:218] Warning: Warning only once for all operators,  other operators may also be overridden.
+  Overriding a previously registered kernel for the same operator and the same dispatch key
+  operator: aten::geometric_(Tensor(a!) self, float p, *, Generator? generator=None) -> Tensor(a!)
+    registered at /pytorch/build/aten/src/ATen/RegisterSchema.cpp:6
+  dispatch key: XPU
+  previous kernel: registered at /pytorch/aten/src/ATen/VmapModeRegistrations.cpp:37
+       new kernel: registered at /root/workspace/frameworks.ai.pytorch.ipex-gpu/build/Release/csrc/gpu/csrc/gpu/xpu/ATen/RegisterXPU_0.cpp:172 (function operator())
+[2m2026-02-05T17:01:44.635317Z[0m [32m INFO[0m [2mdynamo_runtime::discovery::kv_store[0m[2m:[0m KVStoreDiscovery::list: query=AllModels, prefix=v1/mdc, bucket=v1/mdc, entries=0
+[2m2026-02-05T17:01:44.635364Z[0m [32m INFO[0m [2mdynamo_llm::discovery::watcher[0m[2m:[0m removed model [3mmodel_name[0m[2m=[0m"/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-4B-Instruct/snapshots/ebb281ec70b05090aa6165b016eac8ec08e71b17/"
+[2m2026-02-05T17:01:44.635377Z[0m [32m INFO[0m [2mdynamo_llm::http::service::service_v2[0m[2m:[0m chat endpoints disabled
+2026-02-05 17:01:45,745 - dynamo.nixl_connect - WARNING - dynamo.nixl_connect: Failed to load CuPy for GPU acceleration, utilizing numpy to provide CPU based operations.
+2026-02-05 17:01:45,745 - dynamo.nixl_connect - WARNING - dynamo.nixl_connect: Failed to load CuPy for GPU acceleration, utilizing numpy to provide CPU based operations.
+2026-02-05 17:01:45,745 - dynamo.nixl_connect - WARNING - dynamo.nixl_connect: Failed to load CuPy for GPU acceleration, utilizing numpy to provide CPU based operations.
+2026-02-05 17:01:45,819 - dynamo.vllm.multimodal_handlers.encode_worker_handler - WARNING - Failed to import cupy, falling back to numpy: No module named 'cupy'.
+2026-02-05 17:01:45,819 - dynamo.vllm.multimodal_handlers.encode_worker_handler - WARNING - Failed to import cupy, falling back to numpy: No module named 'cupy'.
+2026-02-05 17:01:45,819 - dynamo.vllm.multimodal_handlers.encode_worker_handler - WARNING - Failed to import cupy, falling back to numpy: No module named 'cupy'.
+WARNING 02-05 17:01:45 [_logger.py:68] Found duplicate keys --max-model-len
+WARNING 02-05 17:01:45 [_logger.py:68] Found duplicate keys --max-model-len
+[2m2026-02-05T17:01:45.845842Z[0m [32m INFO[0m [2margs.parse_args[0m[2m:[0m Setting --distributed-executor-backend=mp for TP=1 to avoid UniProcExecutor GIL contention with NIXL connector
+[2m2026-02-05T17:01:45.846404Z[0m [32m INFO[0m [2margs.create_kv_transfer_config[0m[2m:[0m Creating kv_transfer_config from --connector ['nixl']
+[2m2026-02-05T17:01:45.846488Z[0m [32m INFO[0m [2margs.create_kv_events_config[0m[2m:[0m Using env-var DYN_VLLM_KV_EVENT_PORT=20080 to create kv_events_config
+[2m2026-02-05T17:01:45.846530Z[0m [32m INFO[0m [2margs.overwrite_args[0m[2m:[0m Using kv_events_config for publishing vLLM kv events over zmq: KVEventsConfig(enable_kv_cache_events=True, publisher='zmq', endpoint='tcp://*:20080', replay_endpoint=None, buffer_steps=10000, hwm=100000, max_queue_size=100000, topic='') (use_kv_events=True)
+[2m2026-02-05T17:01:45.847450Z[0m [32m INFO[0m [2margs.create_kv_transfer_config[0m[2m:[0m Creating kv_transfer_config from --connector ['nixl']
+[2m2026-02-05T17:01:45.847474Z[0m [32m INFO[0m [2margs.create_kv_transfer_config[0m[2m:[0m Creating kv_transfer_config from --connector ['nixl']
+[2m2026-02-05T17:01:45.847547Z[0m [32m INFO[0m [2margs.create_kv_events_config[0m[2m:[0m Using env-var DYN_VLLM_KV_EVENT_PORT=20080 to create kv_events_config
+[2m2026-02-05T17:01:45.847581Z[0m [32m INFO[0m [2margs.create_kv_events_config[0m[2m:[0m Using env-var DYN_VLLM_KV_EVENT_PORT=20080 to create kv_events_config
+[2m2026-02-05T17:01:45.847594Z[0m [32m INFO[0m [2margs.overwrite_args[0m[2m:[0m Using kv_events_config for publishing vLLM kv events over zmq: KVEventsConfig(enable_kv_cache_events=True, publisher='zmq', endpoint='tcp://*:20080', replay_endpoint=None, buffer_steps=10000, hwm=100000, max_queue_size=100000, topic='') (use_kv_events=True)
+[2m2026-02-05T17:01:45.847628Z[0m [32m INFO[0m [2margs.overwrite_args[0m[2m:[0m Using kv_events_config for publishing vLLM kv events over zmq: KVEventsConfig(enable_kv_cache_events=True, publisher='zmq', endpoint='tcp://*:20080', replay_endpoint=None, buffer_steps=10000, hwm=100000, max_queue_size=100000, topic='') (use_kv_events=True)
+[2m2026-02-05T17:01:45.853399Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Initializing KV store discovery backend
+[2m2026-02-05T17:01:45.853491Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::manager[0m[2m:[0m Initializing NetworkManager with NATS request plane [3mmode[0m[2m=[0mnats
+[2m2026-02-05T17:01:45.854011Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Initializing KV store discovery backend
+[2m2026-02-05T17:01:45.854058Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Initializing KV store discovery backend
+[2m2026-02-05T17:01:45.854095Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::manager[0m[2m:[0m Initializing NetworkManager with NATS request plane [3mmode[0m[2m=[0mnats
+[2m2026-02-05T17:01:45.854141Z[0m [32m INFO[0m [2mdynamo_runtime::pipeline::network::manager[0m[2m:[0m Initializing NetworkManager with NATS request plane [3mmode[0m[2m=[0mnats
+[2m2026-02-05T17:01:45.998924Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Added NATS service dynamo_encoder
+[2m2026-02-05T17:01:45.998925Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Added NATS service dynamo_processor
+[2m2026-02-05T17:01:45.998989Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Added NATS service dynamo_backend
+[2m2026-02-05T17:01:45.998992Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Added NATS service dynamo_encoder
+[2m2026-02-05T17:01:45.999013Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Added NATS service dynamo_backend
+WARNING 02-05 17:01:45 [_logger.py:68] Found PROMETHEUS_MULTIPROC_DIR was set by user. This directory must be wiped between vLLM runs or you will find inaccurate metrics. Unset the variable and vLLM will properly handle cleanup.
+[2m2026-02-05T17:01:46.001632Z[0m [32m INFO[0m [2mdynamo_runtime::distributed[0m[2m:[0m Added NATS service dynamo_backend
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/dist-packages/transformers/image_processing_base.py", line 354, in get_image_processor_dict
+    resolved_image_processor_file = resolved_image_processor_files[0]
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+IndexError: list index out of range
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.12/dist-packages/dynamo/vllm/__main__.py", line 12, in <module>
+    main()
+  File "/usr/local/lib/python3.12/dist-packages/dynamo/vllm/main.py", line 1048, in main
+    uvloop.run(worker())
+  File "/usr/local/lib/python3.12/dist-packages/uvloop/__init__.py", line 96, in run
+    return __asyncio.run(
+           ^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/usr/local/lib/python3.12/dist-packages/uvloop/__init__.py", line 48, in wrapper
+    return await main
+           ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/dynamo/vllm/main.py", line 139, in worker
+    await init_multimodal_encode_worker(runtime, config, shutdown_event)
+  File "/usr/local/lib/python3.12/dist-packages/dynamo/vllm/main.py", line 787, in init_multimodal_encode_worker
+    handler = EncodeWorkerHandler(
+              ^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/dynamo/vllm/multimodal_handlers/encode_worker_handler.py", line 63, in __init__
+    self.image_processor = AutoImageProcessor.from_pretrained(
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/image_processing_auto.py", line 494, in from_pretrained
+    raise initial_exception
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/image_processing_auto.py", line 476, in from_pretrained
+    config_dict, _ = ImageProcessingMixin.get_image_processor_dict(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/image_processing_base.py", line 361, in get_image_processor_dict
+    raise OSError(
+OSError: Can't load image processor for '/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-30B-A3B-Instruct/snapshots/4b184fbdab8886057d8d80c09f35bcfc65fe640e/'. If you were trying to load it from 'https://huggingface.co/models', make sure you don't have a local directory with the same name. Otherwise, make sure '/software/data/pytorch/huggingface/hub/models--Qwen--Qwen3-VL-30B-A3B-Instruct/snapshots/4b184fbdab8886057d8d80c09f35bcfc65fe640e/' is the correct path to a directory containing a preprocessor_config.json file
+INFO 02-05 17:01:53 [model.py:530] Resolved architecture: Qwen3VLMoeForConditionalGeneration
+WARNING 02-05 17:01:53 [_logger.py:68] Casting torch.bfloat16 to torch.float16.
+INFO 02-05 17:01:53 [model.py:1545] Using max model len 8192
+INFO 02-05 17:01:53 [model.py:530] Resolved architecture: Qwen3VLMoeForConditionalGeneration
+WARNING 02-05 17:01:53 [_logger.py:68] Casting torch.bfloat16 to torch.float16.
+INFO 02-05 17:01:53 [model.py:1545] Using max model len 8192
+INFO 02-05 17:01:53 [scheduler.py:229] Chunked prefill is enabled with max_num_batched_tokens=2048.
+INFO 02-05 17:01:53 [vllm.py:630] Asynchronous scheduling is enabled.
+INFO 02-05 17:01:53 [vllm.py:637] Disabling NCCL for DP synchronization when using async scheduling.
+WARNING 02-05 17:01:53 [_logger.py:68] Enforce eager set, overriding optimization level to -O0
+WARNING 02-05 17:01:53 [_logger.py:68] Turning off hybrid kv cache manager because `--kv-transfer-config` is set. This will reduce the performance of vLLM on LLMs with sliding window attention or Mamba attention. If you are a developer of kv connector, please consider supporting hybrid kv cache manager for your connector by making sure your connector is a subclass of `SupportsHMA` defined in kv_connector/v1/base.py and use --no-disable-hybrid-kv-cache-manager to start vLLM.
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/local/lib/python3.12/dist-packages/dynamo/vllm/__main__.py", line 12, in <module>
+    main()
+  File "/usr/local/lib/python3.12/dist-packages/dynamo/vllm/main.py", line 1048, in main
+    uvloop.run(worker())
+  File "/usr/local/lib/python3.12/dist-packages/uvloop/__init__.py", line 96, in run
+    return __asyncio.run(
+           ^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 194, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "uvloop/loop.pyx", line 1518, in uvloop.loop.Loop.run_until_complete
+  File "/usr/local/lib/python3.12/dist-packages/uvloop/__init__.py", line 48, in wrapper
+    return await main
+           ^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/dynamo/vllm/main.py", line 146, in worker
+    await init_multimodal_worker(runtime, config, shutdown_event)
+  File "/usr/local/lib/python3.12/dist-packages/dynamo/vllm/main.py", line 988, in init_multimodal_worker
+    ) = setup_vllm_engine(config)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/dynamo/vllm/main.py", line 354, in setup_vllm_engine
+    engine_client = AsyncLLM.from_vllm_config(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/async_llm.py", line 205, in from_vllm_config
+    return cls(
+           ^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/v1/engine/async_llm.py", line 112, in __init__
+    tokenizer = cached_tokenizer_from_config(self.model_config)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/tokenizers/registry.py", line 231, in cached_tokenizer_from_config
+    return cached_get_tokenizer(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/tokenizers/registry.py", line 214, in get_tokenizer
+    tokenizer = tokenizer_cls_.from_pretrained(tokenizer_name, *args, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/vllm/tokenizers/hf.py", line 79, in from_pretrained
+    tokenizer = AutoTokenizer.from_pretrained(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/auto/tokenization_auto.py", line 1159, in from_pretrained
+    return tokenizer_class_fast.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/tokenization_utils_base.py", line 2097, in from_pretrained
+    return cls._from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/tokenization_utils_base.py", line 2135, in _from_pretrained
+    slow_tokenizer = (cls.slow_tokenizer_class)._from_pretrained(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/tokenization_utils_base.py", line 2343, in _from_pretrained
+    tokenizer = cls(*init_inputs, **init_kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/transformers/models/qwen2/tokenization_qwen2.py", line 172, in __init__
+    with open(vocab_file, encoding="utf-8") as vocab_handle:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+INFO 02-05 17:01:54 [model.py:530] Resolved architecture: Qwen3VLMoeForConditionalGeneration
+INFO 02-05 17:01:54 [model.py:1545] Using max model len 262144
+[2m2026-02-05T17:01:54.737739Z[0m [32m INFO[0m [2mmain.init_multimodal_processor[0m[2m:[0m Waiting for Encoder Worker Instances ...
+[2m2026-02-05T17:17:21.410640Z[0m [33m WARN[0m [1mhttp-request[0m: [2mdynamo_llm::http::service::service_v2[0m[2m:[0m request completed with client request error [3mstatus[0m[2m=[0m404 [3mlatency_ms[0m[2m=[0m0 [2m[3mmethod[0m[2m=[0mPOST [3muri[0m[2m=[0mhttp://localhost:8001/model_express.model.ModelService/EnsureModelDownloaded [3mversion[0m[2m=[0mHTTP/2.0[0m
+[2m2026-02-05T17:41:59.963075Z[0m [33m WARN[0m [1mhttp-request[0m: [2mdynamo_llm::http::service::service_v2[0m[2m:[0m request completed with client request error [3mstatus[0m[2m=[0m404 [3mlatency_ms[0m[2m=[0m0 [2m[3mmethod[0m[2m=[0mPOST [3muri[0m[2m=[0mhttp://localhost:8001/model_express.model.ModelService/EnsureModelDownloaded [3mversion[0m[2m=[0mHTTP/2.0[0m
+[2m2026-02-05T18:14:17.264137Z[0m [33m WARN[0m [1mhttp-request[0m: [2mdynamo_llm::http::service::service_v2[0m[2m:[0m request completed with client request error [3mstatus[0m[2m=[0m404 [3mlatency_ms[0m[2m=[0m0 [2m[3mmethod[0m[2m=[0mPOST [3muri[0m[2m=[0mhttp://localhost:8001/model_express.model.ModelService/EnsureModelDownloaded [3mversion[0m[2m=[0mHTTP/2.0[0m

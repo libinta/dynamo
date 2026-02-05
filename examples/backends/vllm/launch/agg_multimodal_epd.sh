@@ -45,10 +45,10 @@ while [[ $# -gt 0 ]]; do
             ;;
     esac
 done
-
+export DYN_HTTP_PORT=8001 
 # Start frontend (HTTP endpoint)
 # dynamo.frontend accepts either --http-port flag or DYN_HTTP_PORT env var (defaults to 8000)
-python -m dynamo.frontend &
+python -m dynamo.frontend --http-port $DYN_HTTP_PORT&
 
 # Set max model length based on model name
 MAX_MODEL_LEN=""
@@ -68,11 +68,11 @@ if [[ "$SINGLE_GPU" == "true" ]]; then
     EXTRA_ARGS="--gpu-memory-utilization 0.4 --enforce-eager --max-model-len $MAX_MODEL_LEN"
 else
     # Multi-GPU mode: standard memory settings
-    EXTRA_ARGS="--gpu-memory-utilization 0.85 --max-model-len $MAX_MODEL_LEN"
+    EXTRA_ARGS="--gpu-memory-utilization 0.85 --max-model-len $MAX_MODEL_LEN --max-model-len 8192 --dtype float16 --enforce-eager --block-size 64 --tensor-parallel-size 2"
 fi
 
 # Start processor (Python-based preprocessing, handles prompt templating)
-python -m dynamo.vllm --multimodal-processor --enable-multimodal --model $MODEL_NAME &
+python -m dynamo.vllm --multimodal-processor --enable-multimodal --model $MODEL_NAME&
 
 # run E/P/D workers
 # Use single GPU (GPU 0) for pre-merge CI, otherwise use GPU 0 for encode and GPU 1 for PD
@@ -84,8 +84,8 @@ if [[ "$SINGLE_GPU" == "true" ]]; then
     sleep 60
     CUDA_VISIBLE_DEVICES=0 python -m dynamo.vllm --multimodal-worker --enable-multimodal --enable-mm-embeds --model $MODEL_NAME $EXTRA_ARGS &
 else
-    CUDA_VISIBLE_DEVICES=0 python -m dynamo.vllm --multimodal-worker --enable-multimodal --enable-mm-embeds --model $MODEL_NAME $EXTRA_ARGS &
-    CUDA_VISIBLE_DEVICES=1 python -m dynamo.vllm --multimodal-encode-worker --enable-multimodal --model $MODEL_NAME $EXTRA_ARGS &
+    ZE_AFFINITY_MASK=0,1 VLLM_ENCODER=1 python -m dynamo.vllm --multimodal-worker --enable-multimodal --enable-mm-embeds --model $MODEL_NAME $EXTRA_ARGS &
+    ZE_AFFINITY_MASK=2,3 python -m dynamo.vllm --multimodal-encode-worker --enable-multimodal --model $MODEL_NAME $EXTRA_ARGS &
 fi
 
 # Wait for all background processes to complete
